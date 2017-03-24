@@ -1,0 +1,13 @@
+#if ($team.getMembers().contains($member))
+  <h1>$member.getName()</h1>
+  <h3>Specialty: $member.getSpecialty()</h3>
+  <h3>Team: $team.getName()</h3>
+#else
+  <em><p>Oops! We can't seem to find that person on this team.</p></em>
+#end
+<div class="buttonRow">
+
+
+  <a href="/teams/$team.getId()/members/new"><button type="button" name="button" class="btn btn-success">Add another member to this team</button></a>
+  <a href="/teams/$team.getId()"><button type="button" name="button" class="btn btn-warning">Return to this team</button></a>
+</div>

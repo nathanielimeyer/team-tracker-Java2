@@ -1,0 +1,11 @@
+#if ($teams.size() > 0)
+<p>Here are your current teams:</p>
+<ul>
+  #foreach ($team in $teams)
+    <li><a href="/teams/$team.getId()">$team.getName()</a></li>
+  #end
+</ul>
+#else
+<p>You have no teams yet.</p>
+#end
+<a href="/teams/new">Add a New Team</a>

@@ -16,7 +16,7 @@ public class TeamTest {
   }
 
   @Test
-  public void getTeamGoal_teamInstantiatesWithName_FieryPhoenix(){
+  public void getTeamGoal_teamInstantiatesWithGoal_integration(){
     Team testTeam = new Team("Fiery Phoenix", "Integrate app A with app B");
     assertEquals("Integrate app A with app B", testTeam.getGoal());
   }

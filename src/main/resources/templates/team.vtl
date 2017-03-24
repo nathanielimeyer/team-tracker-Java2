@@ -1,0 +1,19 @@
+#if ($team)
+<h1>$team.getName()</h1>
+<h2>Goal: $team.getGoal()</h2>
+<br>
+</br>
+  #if ($team.getMembers().size() > 0)
+    #foreach($member in $team.getMembers())
+      <h3><a href="/teams/$team.getId()/members/$member.getId()">$member.getMemberName()</a></h3>
+    #end
+  #else
+    <p>This team has no members.</p>
+  #end
+#else
+<em><p>Oops! We can't seem to find that team.</p></em>
+#end
+<div class="buttonRow">
+  <a href="/teams/$team.getId()/members/new"><button type="button" name="button" class="btn btn-success">Add a new member</button></a>
+  <a href="/"><button type="button" name="button" class="btn btn-warning">All teams</button></a>
+</div>

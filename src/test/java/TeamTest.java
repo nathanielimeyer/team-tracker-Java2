@@ -50,4 +50,19 @@ public class TeamTest {
     Team secondTeam = new Team("Cool Ranch", "Integrate Doritos with stomach");
     assertEquals(Team.find(secondTeam.getId()), secondTeam);
   }
+
+  @Test
+  public void getMembers_initiallyReturnsEmptyList_ArrayList(){
+    Team.clearTeams();
+    Team testTeam = new Team("Cool Ranch", "Integrate Doritos with stomach");
+    assertEquals(0, testTeam.getMembers().size());
+  }
+
+  @Test
+  public void addMember_addsMemberToSquad_true(){
+    Team testTeam = new Team("Cool Ranch", "Integrate Doritos with stomach");
+    Member testMember = new Member("Bonita Appelbaum","lisp");
+    testTeam.addMember(testMember);
+    assertTrue(testTeam.getMembers().contains(testMember));
+  }
 }
